@@ -1,6 +1,6 @@
 {
   "name": "toolbar-search",
-  "description": "Search control for a toolbar",
+  "description": "Search control for a toolbar for Polymer",
   "main": "toolbar-search.html",
   "keywords": [
     "web-components",
