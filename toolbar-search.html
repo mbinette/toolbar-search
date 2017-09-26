@@ -19,6 +19,7 @@ Custom property | Description | Default
 `--toolbar-search-width` | Width of the search input | `262px`
 `--toolbar-search-input` | Mixin for the search input  | `{}`
 `--toolbar-search-button` | Mixin for paper-icon-button | `{}`
+`--toolbar-search-container` | Mixin for the search container | `{}`
 
 
 @demo demo/index.html
@@ -31,7 +32,7 @@ Custom property | Description | Default
         @apply --layout-horizontal;
         @apply --layout-center;
         transition: .2s cubic-bezier(.4, 0, .2, 1);
-        width: 48px;
+        width: 40px;
       }
 
        :host([active]) #search-container {
