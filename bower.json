@@ -1,5 +1,6 @@
 {
   "name": "toolbar-search",
+  "version": "2.0.0",
   "description": "Search control for a toolbar for Polymer",
   "main": "toolbar-search.html",
   "keywords": [
@@ -9,11 +10,12 @@
     "search"
   ],
   "authors": [
-    "cforgeard"
+    "cforgeard",
+    "Michael Binette <mbinette@oncasoft.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/cforgeard/toolbar-search.git"
+    "url": "git://github.com/mbinette/toolbar-search.git"
   },
   "licence": "MIT",
   "dependencies": {

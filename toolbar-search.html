@@ -1,5 +1,6 @@
 <link rel="import" href="../polymer/polymer-element.html">
 
+<link rel="import" href="../iron-a11y-keys/iron-a11y-keys.html">
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../paper-input/paper-input.html">
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
@@ -11,6 +12,8 @@
 ### Example
   
         <toolbar-search></toolbar-search>
+        <toolbar-search active></toolbar-search>
+        <toolbar-search active term="cats"></toolbar-search>
 
 ### Styling
 
@@ -35,11 +38,11 @@ Custom property | Description | Default
         width: 40px;
       }
 
-       :host([active]) #search-container {
+      :host([active]) #search-container {
         width: var(--toolbar-search-width, 262px);
       }
 
-       :host([active]) #input {
+      :host([active]) #input {
         display: block;
         @apply --layout-flex;
         @apply --toolbar-search-input;
@@ -55,6 +58,7 @@ Custom property | Description | Default
     </style>
 
     <div id="search-container">
+      <iron-a11y-keys keys="enter" on-keys-pressed="search"></iron-a11y-keys>
       <paper-icon-button on-click="showSearch" icon="icons:search"></paper-icon-button>
       <paper-input value="{{term}}" id="input" no-label-float label="[[inputLabel]]">
         <paper-icon-button on-click="hideSearch" slot="suffix" icon="icons:close"></paper-icon-button>
@@ -102,6 +106,14 @@ Custom property | Description | Default
       showSearch() {
         this.active = true;
         this.$.input.focus();
+      }
+
+      /**
+       * Send the custom Search event with the current term and then clear/close the search input
+       */
+      search() {
+        this.dispatchEvent(new CustomEvent('search', {detail: {value: this.term}}));
+        this.hideSearch();
       }
 
       /**
