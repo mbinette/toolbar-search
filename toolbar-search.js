@@ -19,16 +19,17 @@ Custom property | Description | Default
 
 @demo demo/index.html
 */
-import '@polymer/polymer/polymer-element.js';
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 import '@polymer/iron-a11y-keys/iron-a11y-keys.js';
 import '@polymer/iron-flex-layout/iron-flex-layout.js';
 import '@polymer/paper-input/paper-input.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
 import '@polymer/iron-icons/iron-icons.js';
 
-class ToolbarSearch extends Polymer.Element {
+class ToolbarSearch extends PolymerElement {
   static get template() {
-    return Polymer.html`
+    return html`
     <style>
       #search-container {
         @apply --layout-horizontal;
